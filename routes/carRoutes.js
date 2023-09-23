@@ -4,6 +4,8 @@ const fs = require("fs")
 
 const router = express.Router()
 
+router.param("id", carController.checkId)
+
 router
   .route("/")
   .get(carController.getAllCars)
